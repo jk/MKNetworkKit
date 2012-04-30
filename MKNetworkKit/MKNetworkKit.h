@@ -27,7 +27,7 @@
 #define MKNetworkKit_MKNetworkKit_h
 
 #ifndef __IPHONE_4_0
-#warning "MKNetworkKit uses features only available in iOS SDK 4.0 and later."
+#error "MKNetworkKit uses features only available in iOS SDK 4.0 and later."
 #endif
 
 #if TARGET_OS_IPHONE
@@ -38,12 +38,12 @@
 #import <AppKit/AppKit.h>
 #endif
 
-//#ifdef DEBUG
+#ifdef DEBUG
 //#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-//#   define ELog(err) if(err) DLog(@"%@", err)
+#   define ELog(err) if(err) DLog(@"%@", err)
 //#else
 //#   define DLog(...)
-//#endif
+#endif
 //
 //// ALog always displays output regardless of the DEBUG setting
 //#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
